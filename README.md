@@ -1,6 +1,6 @@
 # AAX-SpaceRun-Analyzer
 
-This project consists of two main Python3 scripts, ``main.py`` and ``backtest.py``, and aims to collect information from the [AAX SpaceRun](https://www.aax.com/en-US/campaign/game/spacerun/) game and calculate the best user parameters for the game, based on the data collected.
+This project consists of two main <ins>**Python3**</ins> scripts, ``main.py`` and ``backtest.py``, and aims to collect information from the [AAX SpaceRun](https://www.aax.com/en-US/campaign/game/spacerun/) game and calculate the best user parameters for the game, based on the data collected.
 
 The theme of this game is set in Space, where the spaceship (allegedly) has random chances of crashing - it's a gambling game. While the spaceship is flying, there is a counter which represents the multiplier that will be applied to the user's bet, once the spaceship crashes.
 If, for example, the user bets ``$1`` and has a target multiplier of ``2.00x`` and the crash multiplier is ``2.01x``, he will receive ``1*2.01 = $2.01`` (a profit of ``$1.01``). Otherwise, if the crash multiplier is below or equal to his target multiplier, the user will lose his bet.
