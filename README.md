@@ -6,6 +6,10 @@ The theme of this game is set in Space, where the spaceship (allegedly) has rand
 If, for example, the user bets ``$1`` and has a target multiplier of ``2.00x`` and the crash multiplier is ``2.01x``, he will receive ``1*2.01 = $2.01`` (a profit of ``$1.01``). Otherwise, if the crash multiplier is below or equal to his target multiplier, the user will lose his bet.
 
 ---
+### Requirements
+``pip3 install websocket-client``
+
+---
 ### main.py
 - Will execute an infinite loop that, for each iteration, will create a connection with AAX's websocket, send a request for information and parse all incoming messages, waiting for the one with the expected structure.
 - After receiving and saving the relevant information, the connection to the websocket will be closed, and the program will sleep for 50 seconds (each game match has an initial countdown of 5s and the message contains the data from the 10 latest matches).
