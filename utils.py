@@ -1,7 +1,7 @@
 from os import path, makedirs
 from json import loads as loadJSON
 
-folder_name = "results"
+folder_name = "multiplier-logs"
 last_timestamp = 0
 
 

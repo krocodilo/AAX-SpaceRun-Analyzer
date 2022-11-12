@@ -4,7 +4,7 @@ import utils
 import time
 
 
-wss_url = "wss://gaming-svc.aax.com/crash"
+wss_url = "wss://gaming-svc.aax.com"
 user_agent_header = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0"
 
 # for testing:
@@ -60,4 +60,5 @@ if __name__ == '__main__':
 				# of the history
 
 	except KeyboardInterrupt:
+		print("\nTerminated by CTRL+C ...")
 		ws.close()

@@ -5,18 +5,23 @@ from os import path, listdir
 #########################################################
 ###  OPTIONS
 ##
+# Test parameters
 worstCaseScenario = False    # Execute assuming the lowest crash multipliers come first
 profitOnAllDays = True     # All days must be profitable
+findMiminumBalance = False   # Find the minimum initial balance required
 
-findMiminumBalance = True   # Find the minimum initial balance required
-initialbalance = 50     # initial account balance (monetary units). Ignored if findMiminumBalance = True
+# Betting strategy parameters
+initialbalance = 100     # initial account balance (monetary units). Ignored if findMiminumBalance = True
 balStep = 5         # Step with which to calculate the minimum balance for profit. Ignored if findMiminumBalance = False
 maxInitBalance = 1000    # Maximum initial balance. Ignored if findMiminumBalance = False
-
 bet = 1           # Amount to bet in each match. Must be between 1 and 300
+
+# Target multiplier calculation parameters
 precision = 0.1         # Precision for the generated multipliers (steps between each)
-minimumCommonMults = 2  # Minimum of common profitable multipliers between all days
-maxMultsToShow = 2      # Maximum number of profitable multipliers to show for each file
+
+# Adjust amount of information displayed
+minimumCommonMults = 1  # Minimum of common profitable multipliers between all days
+maxMultsToShow = 1      # Maximum number of profitable multipliers to show for each file
 maxCommonMultsToShow = minimumCommonMults   # Maximum profitable common multipliers to show at the end
 #
 #########################################################
@@ -115,7 +120,7 @@ def show_profits(profits, commonMults, inibalance=None):
     if findMiminumBalance:
         # If all days have profit
         print("\n////////////////////////////////////////////////////////////\n" +
-        "Balance:", round(inibalance), "$\t///////////////////////////////////////////")
+        "Required Balance:", round(inibalance), "$\t//////////////////////////////////")
     
     for day in profits:
         # Show all profitable multipliers (unordered) for each file that has profits
@@ -136,7 +141,7 @@ def show_profits(profits, commonMults, inibalance=None):
 
     print("\n\n__________________________________________\n_________________________________________/\n"
         "Target Multipliers Common to All Days:\n\n"+
-        "Multiplier\tMin: \tMax: \tAvg: \t\tTotal for all days:".expandtabs(10))
+        "Multiplier\tMin: \tMax: \tAvg: \t\tTotal (all days):".expandtabs(10))
     numShown = 0
     for m in sorted(commonMults):
         min = 10000000
